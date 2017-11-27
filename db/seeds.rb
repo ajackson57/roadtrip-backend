@@ -8,3 +8,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+users = User.create([{ email: 'tony@gmail.com', password: 'tony', password_confirmation:'tony' }])
+trips = Trip.create([{ name: 'Boston Architecture',
+                       description: 'An overview of Boston Architecture',
+                       center_lng: 42.3267033,
+                       center_lat: -71.1416098,
+                       user_id: 1 }])
+markers = Marker.create([{ name: 'Art of Americas @ MFA',
+                           description: 'This 121,037-square-foot wing of Bostons Museum of Fine Art opened in late 2010. Norman Fosters London firm designed it in collaboration with CBT Architects of Boston.',
+                           lng: 42.340759,
+                           lat: -71.137618,
+                           poi_url: 'http://www.mfa.org/',
+                           trip_id: 1,
+                           user_id: 1 },
+                         { name: 'Carpenter Center',
+                           description: 'This modern Harvard building by Le Corbusier holds art studios, galleries & film screenings.',
+                           lng: 42.3737181,
+                           lat: -71.1147346,
+                           poi_url: 'https://carpenter.center/',
+                           trip_id: 1,
+                           user_id: 1 }])
