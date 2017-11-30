@@ -13,6 +13,7 @@ trips = Trip.create([{ name: 'Boston Architecture',
                        description: 'An overview of Boston Architecture',
                        center_lng: -71.1416098,
                        center_lat: 42.3267033,
+                       zoom: 14,
                        user_id: 1 }])
 markers = Marker.create([{ name: 'Art of Americas @ MFA',
                            description: 'This 121,037-square-foot wing of Bostons Museum of Fine Art opened in late 2010. Norman Fosters London firm designed it in collaboration with CBT Architects of Boston.',
