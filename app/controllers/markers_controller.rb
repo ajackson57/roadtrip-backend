@@ -1,9 +1,9 @@
-class MarkersController < ApplicationController
+class MarkersController < ProtectedController
   before_action :set_marker, only: [:show, :update, :destroy]
 
   # GET /markers
   def index
-    @markers = Marker.all
+    @markers = current_user.markers
 
     render json: @markers
   end
@@ -15,7 +15,7 @@ class MarkersController < ApplicationController
 
   # POST /markers
   def create
-    @marker = Marker.new(marker_params)
+    @marker = current_user.markers.build(marker_params)
 
     if @marker.save
       render json: @marker, status: :created, location: @marker
@@ -41,7 +41,7 @@ class MarkersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_marker
-      @marker = Marker.find(params[:id])
+      @marker = current_user.markers.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
