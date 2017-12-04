@@ -46,6 +46,6 @@ class MarkersController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def marker_params
-      params.require(:marker).permit(:name, :type, :description, :lng, :lat, :image_url, :poi_url)
+      params.require(:marker).permit(:name, :description, :lng, :lat, :image_url, :poi_url, :trip_id)
     end
 end
